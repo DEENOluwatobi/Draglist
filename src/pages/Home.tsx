@@ -38,6 +38,12 @@ const initialItems: ListItem[] = [
     name: 'Vivid Festival',
     description: 'Sydney, Australia'
   },
+  {
+    id: '6',
+    image: '/pic4.svg',
+    name: 'Scotland Island',
+    description: 'Sydney, Australia'
+  },
 ];
 
 const ListHome = () => {

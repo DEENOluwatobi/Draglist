@@ -9,7 +9,7 @@ interface DraggableListProps {
 
 const DraggableList: React.FC<DraggableListProps> = ({ items, setItems }) => {
   const handleOnDragEnd = (result: DropResult) => {
-    console.log('Drag End:', result); // Debugging
+    console.log('Drag End:', result);
     if (!result.destination) return;
 
     const newItems = Array.from(items);
@@ -31,7 +31,7 @@ const DraggableList: React.FC<DraggableListProps> = ({ items, setItems }) => {
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     className="p-4 mb-1 bg-white rounded-sm flex justify-between items-center"
-                    style={{ ...provided.draggableProps.style }} // Ensure styles are applied
+                    style={{ ...provided.draggableProps.style }}
                   >
                     <div className="flex items-center">
                       <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-lg" />

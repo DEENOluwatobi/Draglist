@@ -581,6 +581,9 @@ video {
 .flex {
   display: flex;
 }
+.list-item {
+  display: list-item;
+}
 .h-16 {
   height: 4rem;
 }

@@ -24,7 +24,7 @@ const initialItems: ListItem[] = [
   },
   {
     id: '4',
-    image: '/piv4.svg',
+    image: '/pic4.svg',
     name: 'Clam Bar',
     description: 'Etcetera veni, Vidi vici'
   },

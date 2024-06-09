@@ -33,7 +33,7 @@ const DraggableList: React.FC<DraggableListProps> = ({ items, setItems }) => {
                     style={{ ...provided.draggableProps.style }} // Ensure styles are applied
                   >
                     <div className="flex items-center">
-                      <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-full" />
+                      <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-lg" />
                       <div>
                         <h3 className="font-bold">{item.name}</h3>
                         <p className="text-sm text-gray-600">{item.description}</p>

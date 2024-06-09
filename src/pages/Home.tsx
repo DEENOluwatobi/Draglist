@@ -6,27 +6,33 @@ import { ListItem } from '../types';
 const initialItems: ListItem[] = [
   {
     id: '1',
-    image: 'https://via.placeholder.com/150',
-    name: 'Item 1',
-    description: 'Description for Item 1'
+    image: '/pic.svg',
+    name: 'Scotland Island',
+    description: 'Sydney, Australia'
   },
   {
     id: '2',
-    image: 'https://via.placeholder.com/150',
-    name: 'Item 2',
-    description: 'Description for Item 2'
+    image: '/pic2.svg',
+    name: 'The Charles Grand Brasserie & Bar',
+    description: 'Lorem ipsum, Dolor'
   },
   {
     id: '3',
-    image: 'https://via.placeholder.com/150',
-    name: 'Item 3',
-    description: 'Description for Item 3'
+    image: '/pic3.svg',
+    name: 'Bridge Climb',
+    description: 'Dolor, Sit amet'
   },
   {
     id: '4',
-    image: 'https://via.placeholder.com/150',
-    name: 'Item 4',
-    description: 'Description for Item 4'
+    image: '/piv4.svg',
+    name: 'Clam Bar',
+    description: 'Etcetera veni, Vidi vici'
+  },
+  {
+    id: '5',
+    image: '/pic5.svg',
+    name: 'Vivid Festival',
+    description: 'Sydney, Australia'
   },
 ];
 

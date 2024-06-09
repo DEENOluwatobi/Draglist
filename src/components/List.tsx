@@ -9,7 +9,6 @@ interface DraggableListProps {
 
 const DraggableList: React.FC<DraggableListProps> = ({ items, setItems }) => {
   const handleOnDragEnd = (result: DropResult) => {
-    console.log('Drag End:', result); // Debugging
     if (!result.destination) return;
 
     const newItems = Array.from(items);
@@ -30,15 +29,19 @@ const DraggableList: React.FC<DraggableListProps> = ({ items, setItems }) => {
                   <li
                     ref={provided.innerRef}
                     {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    className="p-4 mb-2 bg-white rounded-lg shadow flex items-center"
+                    className="p-4 mb-2 bg-white rounded-lg shadow flex justify-between items-center"
                     style={{ ...provided.draggableProps.style }} // Ensure styles are applied
                   >
-                    <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-full" />
-                    <div>
-                      <h3 className="font-bold">{item.name}</h3>
-                      <p className="text-sm text-gray-600">{item.description}</p>
+                    <div className="flex items-center">
+                      <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-full" />
+                      <div>
+                        <h3 className="font-bold">{item.name}</h3>
+                        <p className="text-sm text-gray-600">{item.description}</p>
+                      </div>
                     </div>
+                    {/* <div {...provided.dragHandleProps} className="cursor-pointer select-none p-2 bg-gray-300 rounded">
+                      Move
+                    </div> */}
                   </li>
                 )}
               </Draggable>

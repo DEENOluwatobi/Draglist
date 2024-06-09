@@ -1,51 +1,3 @@
-// import React, { useRef } from 'react';
-// import { useDrag, useDrop } from 'react-dnd';
-// import { ListItem } from '../types';
-
-// interface DraggableListItemProps {
-//   item: ListItem;
-//   index: number;
-//   setItems: React.Dispatch<React.SetStateAction<ListItem[]>>;
-//   items: ListItem[];
-// }
-
-// const DraggableListItem: React.FC<DraggableListItemProps> = ({ item, index, setItems, items }) => {
-//   const ref = useRef<HTMLLIElement>(null);
-
-//   const [, drag] = useDrag({
-//     type: 'list-item',
-//     item: { type: 'list-item', id: item.id, index },
-//   });
-
-//   const [, drop] = useDrop({
-//     accept: 'list-item',
-//     hover: (draggedItem: any) => {
-//       if (draggedItem.index === index) return;
-//       draggedItem.hoverIndex = index;
-//     },
-//   });
-
-//   drag(drop(ref));
-
-//   return (
-//     <li
-//       ref={ref}
-//       className="p-4 mb-2 bg-white rounded-lg shadow flex justify-between items-center"
-//     >
-//       <div className="flex items-center">
-//         <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-full" />
-//         <div>
-//           <h3 className="font-bold">{item.name}</h3>
-//           <p className="text-sm text-gray-600">{item.description}</p>
-//         </div>
-//       </div>
-//       <div className="cursor-pointer select-none p-2 bg-gray-300 rounded">Move</div>
-//     </li>
-//   );
-// };
-
-// export default DraggableListItem;
-
 import React, { useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import { ListItem } from '../types';
@@ -62,7 +14,7 @@ const DraggableListItem: React.FC<DraggableListItemProps> = ({ item, index, setI
 
   const [, drag] = useDrag({
     type: 'list-item',
-    item: { type: 'list-item', id: item.id, index },
+    item: { type: 'list-item', id: item.id },
   });
 
   const [, drop] = useDrop({
@@ -78,16 +30,18 @@ const DraggableListItem: React.FC<DraggableListItemProps> = ({ item, index, setI
   return (
     <li
       ref={ref}
-      className="p-4 mb-2 bg-white rounded-lg shadow flex justify-between items-center"
+      className="p-2 mb-1 bg-white rounded-sm flex justify-between items-center"
     >
       <div className="flex items-center">
-        <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-full" />
+        <img src={item.image} alt={item.name} className="w-16 h-16 mr-4 rounded-md" />
         <div>
-          <h3 className="font-bold">{item.name}</h3>
-          <p className="text-sm text-gray-600">{item.description}</p>
+          <h3 className="font-semibold text-[.9em]">{item.name}</h3>
+          <div className='flex items-center gap-2'>
+            <img src='/location.svg' alt='location-svg'/>
+            <p className="text-sm text-gray-500 text-[.8em]">{item.description}</p>
+          </div>
         </div>
       </div>
-      <div className="cursor-pointer select-none p-2 bg-gray-300 rounded">Move</div>
     </li>
   );
 };

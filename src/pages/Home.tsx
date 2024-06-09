@@ -1,10 +1,4 @@
 "use client"
-// import React, { useState } from 'react';
-// import { DndProvider } from 'react-dnd';
-// import { HTML5Backend } from 'react-dnd-html5-backend';
-// import DraggableList from '../components/DraggableList';
-// import { ListItem } from '../types';
-
 import { useState, useEffect } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -59,23 +53,14 @@ const ListHome = () => {
   }, []);
 
   if (!backend) {
-    return null; // Or a loading spinner
+    return null;
   }
 
   return (
     <>
-      {/* <DndProvider backend={HTML5Backend}>
-        <div className="flex items-center justify-center h-screen bg-gray-200">
-          <div className="w-full max-w-md p-4">
-            <DraggableList items={items} setItems={setItems} />
-          </div>
-        </div>
-      </DndProvider> */}
-
     <DndProvider backend={backend}>
-      <div className="flex items-center justify-center min-h-screen bg-gray-200">
-        <div className="w-full max-w-md p-4">
-          <h1 className="mb-4 text-2xl font-bold text-center">Draggable List</h1>
+      <div className="flex items-center justify-center h-screen bg-gray-200">
+        <div className="w-full max-w-md">
           <DraggableList items={items} setItems={setItems} />
         </div>
       </div>
